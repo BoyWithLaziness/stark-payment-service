@@ -1,11 +1,13 @@
 package stark.payment_service.dto;
 
-import org.antlr.v4.runtime.misc.NotNull;
-
 import lombok.Data;
 
+import java.util.UUID;
+
+import jakarta.validation.constraints.*;
 @Data
 public class CreatePaymentRequest {
+    
     @NotNull
     private Long amount;
 
@@ -13,8 +15,6 @@ public class CreatePaymentRequest {
     private String currency;
 
     @NotBlank
-    private String userId;
-
-    private String description;
+    private UUID cartId;
 
 }
